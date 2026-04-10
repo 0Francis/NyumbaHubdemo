@@ -1,8 +1,8 @@
 # NyumbaHub
 
-A rental and property management system built for the Kenyan market. NyumbaHub helps landlords, agents, and tenants manage properties, leases, invoices, payments, and maintenance requests — all in one place.
+A rental and property management system built for the Kenyan market. NyumbaHub helps landlords, agents, and tenants manage properties, leases, invoices, payments, and maintenance requests; all in one place.
 
-This repository contains the **backend API** that powers the NyumbaHub platform.
+This repository contains the **backend API** that is supposed to power the NyumbaHub platform.
 
 ## Tech Stack
 
@@ -13,11 +13,19 @@ This repository contains the **backend API** that powers the NyumbaHub platform.
 - **Auth:** Clerk
 - **Validation:** Zod
 
+**V1:**
+- **Runtime:** Node.js + JavaScript
+- **Framework:** Express.js
+- **Database:** SQLite
+- **Auth:** None
+- **Validation:** None
+This is my initial Starter project, to help build the actual one optimised to at least be scalable.
+
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 20+
 - A [Supabase](https://supabase.com) project (for PostgreSQL)
 - A [Clerk](https://clerk.com) application (for authentication)
 
