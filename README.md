@@ -19,6 +19,7 @@ This repository contains the **backend API** that is supposed to power the Nyumb
 - **Database:** SQLite
 - **Auth:** None
 - **Validation:** None
+
 This is my initial Starter project, to help build the actual one optimised to at least be scalable.
 
 ## Getting Started
