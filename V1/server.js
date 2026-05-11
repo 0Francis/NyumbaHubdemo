@@ -6,7 +6,6 @@ app.use(express.json());
 
 const db = new Database("data.db");
 
-// Create tables
 db.exec(`
   CREATE TABLE IF NOT EXISTS properties (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -41,7 +40,6 @@ db.exec(`
   );
 `);
 
-// ---- Properties ----
 
 app.get("/properties", (req, res) => {
   const rows = db.prepare("SELECT * FROM properties").all();
@@ -90,7 +88,6 @@ app.delete("/properties/:id", (req, res) => {
   res.json({ message: "Deleted" });
 });
 
-// ---- Tenants ----
 
 app.get("/tenants", (req, res) => {
   const rows = db.prepare("SELECT * FROM tenants").all();
@@ -114,7 +111,6 @@ app.delete("/tenants/:id", (req, res) => {
   res.json({ message: "Deleted" });
 });
 
-// ---- Payments ----
 
 app.get("/payments", (req, res) => {
   const rows = db.prepare("SELECT * FROM payments").all();
@@ -135,7 +131,6 @@ app.post("/payments", (req, res) => {
   res.status(201).json({ id: result.lastInsertRowid, tenant_id, amount, method: method || "cash" });
 });
 
-// ---- Maintenance ----
 
 app.get("/maintenance", (req, res) => {
   const rows = db.prepare("SELECT * FROM maintenance").all();
@@ -161,8 +156,6 @@ app.put("/maintenance/:id", (req, res) => {
   if (result.changes === 0) return res.status(404).json({ error: "Request not found" });
   res.json({ message: "Updated", status });
 });
-
-// ---- Start ----
 
 app.listen(3001, () => {
   console.log("NyumbaHub V1 running on http://localhost:3001");
